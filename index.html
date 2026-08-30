@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Krishna Mohana's Dental Clinic — Malakkallu</title>
+<title>Dr. Krishna Mohana's Dental Clinic — Near LIC Office, Malakkallu</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2312564C'/%3E%3Cpath d='M50 18c-22 0-30 20-26 40 3 15 8 32 16 32 8 0 5-20 10-20s2 20 10 20c8 0 13-17 16-32 4-20-4-40-26-40z' fill='%23F8F5EF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Outfit:wght@300..700&display=swap" rel="stylesheet">
@@ -14,26 +14,36 @@
 :root{
   --cream:#F8F5EF; --cream2:#F1ECE1; --paper:#FFFDF8;
   --mint:#E9F2EB; --mint-deep:#DCEAE0;
-  --teal:#12564C; --teal-ink:#0C3A33; --teal-soft:#CFE3DA;
+  --teal:#12564C; --teal-mid:#156A5D; --teal-ink:#0C3A33; --teal-soft:#CFE3DA;
+  --sage:#4E9B84; --gold:#E4B15E; --rose:#C4707E;
   --amber:#D98C46; --amber-ink:#A85F22; --amber-soft:#F6E3CE;
   --blush:#F2D9C8; --blush-deep:#EBC4AE;
   --ink:#1B2A26; --muted:#5F6E67; --line:#DAD3C3;
   --ok:#2F8A5D; --bad:#C0563B;
+  --grad-teal:linear-gradient(135deg,#156A5D,#0C3A33);
+  --grad-amber:linear-gradient(135deg,#E09B52,#C97A35);
+  --grad-warm:linear-gradient(100deg,#D98C46 10%,#C0563B 90%);
+  --grad-cool:linear-gradient(120deg,#12564C,#4E9B84);
   --ff-h:"Fraunces",serif; --ff-b:"Outfit",sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:92px}
 body{font-family:var(--ff-b);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 ::selection{background:var(--teal-soft)}
+::-webkit-scrollbar{width:11px}
+::-webkit-scrollbar-track{background:var(--cream2)}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--teal),var(--sage));border-radius:8px;border:2px solid var(--cream2)}
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;background:none;border:none;color:inherit}
 .container{max-width:1160px;margin:0 auto;padding:0 24px}
 h1,h2,h3{font-family:var(--ff-h);font-weight:550;color:var(--teal-ink);line-height:1.08;letter-spacing:-.01em}
-h1 em,h2 em,.q-quote em{font-style:italic;color:var(--amber-ink);font-weight:500}
+.hero h1 em,.svc-head h2 em,.about h2 em,.time-grid h2 em{
+  font-style:italic;font-weight:500;
+  background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;color:transparent}
 section{padding:96px 0}
 .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:18px}
-.eyebrow::before{content:"";width:30px;height:1.5px;background:var(--amber)}
+.eyebrow::before{content:"";width:30px;height:1.5px;background:var(--grad-warm)}
 .lead{color:var(--muted);font-size:17px;max-width:56ch}
 :focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-radius:6px}
 
@@ -42,17 +52,17 @@ section{padding:96px 0}
 .rv.in{opacity:1;transform:none}
 
 /* ============ Buttons ============ */
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-size:15px;font-weight:600;transition:transform .25s,box-shadow .25s,background .25s,color .25s}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-size:15px;font-weight:600;transition:transform .25s,box-shadow .25s,filter .25s,color .25s,background .25s}
 .btn i{font-size:18px}
-.btn-solid{background:var(--teal);color:var(--cream)}
-.btn-solid:hover{background:var(--teal-ink);transform:translateY(-2px);box-shadow:0 12px 26px rgba(18,86,76,.22)}
+.btn-solid{background:var(--grad-teal);color:var(--cream);box-shadow:inset 0 1px 0 rgba(255,255,255,.14)}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(18,86,76,.28),inset 0 1px 0 rgba(255,255,255,.14);filter:brightness(1.12)}
 .btn-ghost{border:1.5px solid var(--teal);color:var(--teal)}
 .btn-ghost:hover{background:var(--mint-deep);transform:translateY(-2px)}
-.btn-light{background:var(--amber);color:#3A2408}
-.btn-light:hover{background:#E29B55;transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.18)}
+.btn-light{background:var(--grad-amber);color:#3A2408;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.18);filter:brightness(1.06)}
 
 /* ============ Announcement marquee ============ */
-.marquee{background:var(--teal);overflow:hidden;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.marquee{background:linear-gradient(90deg,#0C3A33,#156A5D 45%,#0C3A33);overflow:hidden;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.08)}
 .marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-track{display:flex;width:max-content;animation:mq 32s linear infinite}
 @keyframes mq{to{transform:translateX(-50%)}}
@@ -60,19 +70,19 @@ section{padding:96px 0}
 .mq-item{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;color:#EAF3EE;font-size:12.5px;font-weight:500;letter-spacing:.09em;text-transform:uppercase}
 .mq-item i{font-size:15px;color:#F0C489}
 .mq-sep{display:inline-flex;padding:0 26px}
-.mq-sep i{font-size:11px;color:var(--amber)}
+.mq-sep i{font-size:11px;color:var(--gold)}
 
 /* ============ Nav ============ */
 nav{position:sticky;top:0;z-index:60;background:rgba(248,245,239,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
 nav.scrolled{border-color:var(--line);box-shadow:0 8px 30px rgba(18,86,76,.07)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
 .logo{display:flex;align-items:center;gap:12px}
-.logo-mark{width:42px;height:42px;border-radius:13px;background:var(--teal);display:grid;place-items:center;color:var(--cream);font-size:22px;flex:none}
+.logo-mark{width:42px;height:42px;border-radius:13px;background:var(--grad-teal);display:grid;place-items:center;color:var(--cream);font-size:22px;flex:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.15)}
 .logo b{font-family:var(--ff-h);font-weight:600;font-size:17px;color:var(--teal-ink);display:block;line-height:1.15}
 .logo small{display:block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .nav-links{display:flex;align-items:center;gap:30px;list-style:none}
 .nav-links a{font-size:14.5px;font-weight:500;color:var(--ink);position:relative;padding:6px 0}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--amber);transition:width .3s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--grad-warm);transition:width .3s}
 .nav-links a:hover::after{width:100%}
 .nav-cta{padding:11px 22px}
 .burger{display:none;font-size:26px;color:var(--teal-ink);width:44px;height:44px;align-items:center;justify-content:center;border-radius:12px}
@@ -84,12 +94,16 @@ nav.scrolled{border-color:var(--line);box-shadow:0 8px 30px rgba(18,86,76,.07)}
 .m-close:hover{background:rgba(255,255,255,.1)}
 .m-links{list-style:none;margin-top:8vh;display:flex;flex-direction:column;gap:6px}
 .m-links a{font-family:var(--ff-h);font-size:clamp(30px,7vw,44px);color:var(--cream);display:flex;align-items:baseline;gap:16px;padding:10px 0}
-.m-links a small{font-family:var(--ff-b);font-size:13px;color:var(--amber)}
+.m-links a small{font-family:var(--ff-b);font-size:13px;color:var(--gold)}
 .m-foot{margin-top:auto;color:#9FBDB2;font-size:14px;display:flex;flex-direction:column;gap:6px}
-.m-foot i{color:var(--amber)}
+.m-foot i{color:var(--gold)}
 
 /* ============ Hero ============ */
-.hero{padding:64px 0 90px;position:relative}
+.hero{padding:64px 0 90px;position:relative;
+  background:
+    radial-gradient(55% 70% at 85% 8%, rgba(228,177,94,.14), transparent 62%),
+    radial-gradient(45% 65% at 8% 28%, rgba(78,155,132,.12), transparent 60%),
+    radial-gradient(40% 55% at 55% 100%, rgba(196,112,126,.08), transparent 65%)}
 .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
 .status-pill{display:inline-flex;align-items:center;gap:9px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:13px;font-weight:600;color:var(--teal-ink);margin-bottom:22px}
 .status-pill .dot{width:9px;height:9px;border-radius:50%;background:var(--bad);position:relative;flex:none}
@@ -106,39 +120,42 @@ nav.scrolled{border-color:var(--line);box-shadow:0 8px 30px rgba(18,86,76,.07)}
 
 /* --- hero visual / dental arch --- */
 .hero-visual{position:relative;display:flex;flex-direction:column;align-items:center}
-.blob{position:absolute;width:112%;height:104%;top:-3%;left:-6%;background:var(--mint-deep);border-radius:58% 42% 55% 45% / 46% 52% 48% 54%;animation:morph 16s ease-in-out infinite alternate;z-index:0}
+.arch-stage{position:relative;width:min(560px,100%)}
+.blob{position:absolute;inset:-5% -7%;background:linear-gradient(140deg,#DCEAE0 0%,#CFE3DA 42%,#F2D9C8 100%);border-radius:58% 42% 55% 45% / 46% 52% 48% 54%;animation:morph 16s ease-in-out infinite alternate;z-index:0;opacity:.85}
 @keyframes morph{
   0%{border-radius:58% 42% 55% 45%/46% 52% 48% 54%}
   50%{border-radius:45% 55% 48% 52%/55% 44% 56% 45%}
   100%{border-radius:52% 48% 42% 58%/48% 56% 44% 52%}}
-.arch-wrap{position:relative;z-index:1;width:min(560px,100%);transition:transform .4s ease-out;user-select:none}
+.arch-wrap{position:relative;z-index:1;transition:transform .4s ease-out;user-select:none}
 #archSvg{width:100%;height:auto;overflow:visible}
 .gum{fill:none;stroke:var(--blush);stroke-width:34;stroke-linecap:round;pointer-events:stroke;cursor:pointer;transition:stroke .3s}
 .gum:hover{stroke:var(--blush-deep)}
 .tooth-g{cursor:pointer;outline:none}
-.tooth-shape{fill:#FFFEFA;stroke:var(--teal);stroke-width:2;transition:fill .25s,stroke .25s,stroke-width .25s}
-.tooth-g:hover .tooth-shape,.tooth-g:focus-visible .tooth-shape{fill:var(--amber-soft);stroke:var(--teal-ink);stroke-width:2.6}
-.tooth-in{transition:transform .35s cubic-bezier(.34,1.56,.64,1);animation:tpop .55s cubic-bezier(.34,1.56,.64,1) calc(var(--i)*.055s) backwards}
+.hit{fill:transparent;pointer-events:all}
+.tooth-shape{pointer-events:none;fill:#FFFEFA;stroke:var(--teal);stroke-width:2;transition:fill .25s,stroke .25s,stroke-width .25s}
+.tooth-g:hover .tooth-shape,.tooth-g:focus-visible .tooth-shape{fill:url(#toothHot);stroke:var(--teal-ink);stroke-width:2.6}
+.tooth-in{pointer-events:none;transition:transform .35s cubic-bezier(.34,1.56,.64,1);animation:tpop .55s cubic-bezier(.34,1.56,.64,1) calc(var(--i)*.055s) backwards}
 @keyframes tpop{from{opacity:0;transform:translateY(-10px) scale(.55)}}
 .tooth-g:hover .tooth-in,.tooth-g:focus-visible .tooth-in{transform:translateY(7px)}
-.spark{fill:var(--amber);opacity:0;transform:scale(.3);transform-box:fill-box;transform-origin:center;transition:opacity .25s,transform .25s}
-.tooth-g:hover .spark{opacity:1;transform:scale(1)}
-.arch-panel{position:relative;z-index:2;margin:20px auto 0;max-width:440px;display:flex;gap:14px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px 18px;min-height:78px;transition:border-color .3s;box-shadow:0 10px 26px rgba(18,86,76,.07)}
+.spark{pointer-events:none;fill:var(--gold);opacity:0;transform:scale(.3);transform-box:fill-box;transform-origin:center;transition:opacity .25s,transform .25s}
+.tooth-g:hover .spark,.tooth-g:focus-visible .spark{opacity:1;transform:scale(1)}
+.arch-panel{position:relative;z-index:2;margin:22px auto 0;max-width:460px;display:flex;gap:14px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:14px 18px;min-height:78px;transition:border-color .3s;box-shadow:0 10px 26px rgba(18,86,76,.07)}
 .arch-panel.active{border-color:var(--amber)}
-.ap-ic{width:40px;height:40px;border-radius:12px;background:var(--mint);color:var(--teal);display:grid;place-items:center;font-size:21px;flex:none}
+.ap-ic{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--mint),var(--teal-soft));color:var(--teal);display:grid;place-items:center;font-size:21px;flex:none}
 .arch-panel strong{font-family:var(--ff-h);font-size:16.5px;color:var(--teal-ink);display:block;line-height:1.25}
 .arch-panel span{display:block;font-size:13.5px;color:var(--muted);line-height:1.45;margin-top:3px}
 .chip{position:absolute;z-index:3}
 .chip-in{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:10px 17px;font-size:13.5px;font-weight:600;color:var(--teal-ink);box-shadow:0 10px 24px rgba(18,86,76,.1)}
 .chip-in i{color:var(--amber-ink);font-size:17px}
-.chip-1{top:4%;right:0}.chip-1 .chip-in{animation:float 5.5s ease-in-out infinite}
-.chip-2{top:42%;left:-2%}.chip-2 .chip-in{animation:float 6.8s ease-in-out .9s infinite}
+/* safe zones: top-right chip, bottom-left chip, top-left badge — none touch the teeth */
+.chip-1{top:16px;right:-4px}.chip-1 .chip-in{animation:float 5.5s ease-in-out infinite}
+.chip-2{bottom:7%;left:-8px}.chip-2 .chip-in{animation:float 6.8s ease-in-out .9s infinite}
 @keyframes float{50%{transform:translateY(-9px)}}
-.ring-badge{position:absolute;z-index:3;bottom:-8px;left:5%;width:118px;height:118px}
+.ring-badge{position:absolute;z-index:3;top:-12px;left:-6px;width:112px;height:112px}
 .ring-badge .ring{width:100%;height:100%;animation:spin 20s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.ring-badge text{font-size:9px;font-weight:600;letter-spacing:2.4px;fill:var(--teal);font-family:var(--ff-b)}
-.ring-core{position:absolute;inset:0;margin:auto;width:52px;height:52px;border-radius:50%;background:var(--teal);color:var(--cream);display:grid;place-items:center;font-size:24px}
+.ring-badge text{font-size:9px;font-weight:600;letter-spacing:2.4px;font-family:var(--ff-b)}
+.ring-core{position:absolute;inset:0;margin:auto;width:52px;height:52px;border-radius:50%;background:var(--grad-teal);color:var(--cream);display:grid;place-items:center;font-size:24px;box-shadow:0 8px 18px rgba(12,58,51,.28)}
 
 /* ============ Services ============ */
 .svc-head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:44px;flex-wrap:wrap}
@@ -148,10 +165,16 @@ nav.scrolled{border-color:var(--line);box-shadow:0 8px 30px rgba(18,86,76,.07)}
 .acc-item:last-child{border-bottom:1px solid var(--line)}
 .acc-head{width:100%;display:grid;grid-template-columns:72px 1fr 52px 44px;align-items:center;gap:18px;padding:26px 10px;text-align:left;transition:background .3s;border-radius:14px}
 .acc-head:hover{background:rgba(220,234,224,.45)}
-.acc-num{font-family:var(--ff-h);font-style:italic;font-size:19px;color:var(--amber-ink)}
+.acc-num{font-family:var(--ff-h);font-style:italic;font-size:19px;background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;color:transparent}
 .acc-title{font-family:var(--ff-h);font-size:clamp(20px,2.4vw,26px);font-weight:550;color:var(--teal-ink);transition:transform .3s}
 .acc-head:hover .acc-title{transform:translateX(6px)}
-.acc-ic{font-size:30px;color:var(--teal);justify-self:center}
+.acc-ic{font-size:30px;justify-self:center}
+.acc-item:nth-child(1) .acc-ic{color:var(--teal)}
+.acc-item:nth-child(2) .acc-ic{color:var(--bad)}
+.acc-item:nth-child(3) .acc-ic{color:var(--sage)}
+.acc-item:nth-child(4) .acc-ic{color:var(--amber)}
+.acc-item:nth-child(5) .acc-ic{color:var(--gold)}
+.acc-item:nth-child(6) .acc-ic{color:var(--rose)}
 .acc-plus{font-size:22px;color:var(--teal-ink);justify-self:center;transition:transform .4s}
 .acc-item.open .acc-plus{transform:rotate(45deg)}
 .acc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
@@ -160,26 +183,28 @@ nav.scrolled{border-color:var(--line);box-shadow:0 8px 30px rgba(18,86,76,.07)}
 .acc-inner{padding:0 10px 28px 90px;max-width:640px}
 .acc-inner p{color:var(--muted);font-size:15.5px;margin-bottom:14px}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
-.tags span{font-size:12.5px;font-weight:600;color:var(--teal);background:var(--mint);border-radius:999px;padding:6px 13px}
+.tags span{font-size:12.5px;font-weight:600;border-radius:999px;padding:6px 13px}
+.tags span:nth-child(odd){background:var(--mint);color:var(--teal)}
+.tags span:nth-child(even){background:var(--amber-soft);color:var(--amber-ink)}
 .flash{animation:flashbg 1.6s ease}
 @keyframes flashbg{0%,55%{background:var(--amber-soft)}100%{background:transparent}}
 
 /* ============ Quote band ============ */
-.quote{background:var(--cream2);padding:78px 0;text-align:center}
-.q-ic{font-size:34px;color:var(--amber);margin-bottom:18px}
+.quote{background:linear-gradient(180deg,var(--cream2),#F5EADC);padding:78px 0;text-align:center}
+.q-ic{font-size:34px;color:var(--gold);margin-bottom:18px}
 .q-quote{font-family:var(--ff-h);font-size:clamp(22px,3.2vw,32px);font-style:italic;color:var(--teal-ink);max-width:26ch;margin:0 auto 14px;line-height:1.3}
 .q-by{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 
 /* ============ About ============ */
-.about{background:var(--mint)}
+.about{background:linear-gradient(180deg,#E9F2EB,#F0F4EC 55%,#E9F2EB)}
 .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
 .doc-card{position:sticky;top:104px;background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:40px 34px;box-shadow:0 18px 44px rgba(18,86,76,.08)}
-.mono-wrap{position:relative;width:150px;height:150px;margin-bottom:26px}
-.mono-ring{position:absolute;inset:-8px;animation:spin 26s linear infinite}
-.mono-ring circle{fill:none;stroke:var(--amber);stroke-width:1.5;stroke-dasharray:4 9;stroke-linecap:round}
-.mono{position:absolute;inset:0;margin:auto;width:126px;height:126px;border-radius:50%;background:var(--teal);color:var(--cream);display:grid;place-items:center;font-family:var(--ff-h);font-size:44px;font-weight:550}
-.doc-card h3{font-size:26px;margin-bottom:4px}
-.doc-cred{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-ink);font-weight:600;margin-bottom:22px}
+.mono-wrap{position:relative;width:160px;height:160px;margin:0 auto 26px}
+.mono-ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 26s linear infinite}
+.mono{position:absolute;inset:0;margin:auto;width:126px;height:126px;border-radius:50%;background:var(--grad-teal);color:var(--cream);display:flex;align-items:center;justify-content:center;font-family:var(--ff-h);font-size:44px;font-weight:550;box-shadow:0 10px 24px rgba(12,58,51,.24),inset 0 2px 0 rgba(255,255,255,.12)}
+.mono span{display:block;letter-spacing:.05em;margin-right:-.05em;transform:translateY(3px)}   /* optical centering */
+.doc-card h3{font-size:26px;margin-bottom:4px;text-align:center}
+.doc-cred{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-ink);font-weight:600;margin-bottom:22px;text-align:center}
 .doc-meta{display:flex;flex-direction:column;gap:13px;border-top:1px solid var(--line);padding-top:22px}
 .doc-meta span{display:flex;align-items:center;gap:11px;font-size:14.5px;color:var(--muted)}
 .doc-meta i{color:var(--teal);font-size:19px}
@@ -191,7 +216,7 @@ nav.scrolled{border-color:var(--line);box-shadow:0 8px 30px rgba(18,86,76,.07)}
 .stats{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--line);padding-top:30px}
 .stat{padding:0 34px 10px 0;margin-right:34px;border-right:1px solid var(--line)}
 .stat:last-child{border:none;margin:0;padding-right:0}
-.stat-num{font-family:var(--ff-h);font-size:40px;font-weight:550;color:var(--teal);display:block;line-height:1.1}
+.stat-num{font-family:var(--ff-h);font-size:40px;font-weight:550;display:block;line-height:1.1;background:var(--grad-cool);-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat small{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
 
 /* ============ Timings ============ */
@@ -211,21 +236,21 @@ nav.scrolled{border-color:var(--line);box-shadow:0 8px 30px rgba(18,86,76,.07)}
 .srow.off .shours{color:var(--amber-ink)}
 .srow.off .sday{color:var(--muted)}
 .srow.today{background:var(--mint)}
-.tag{font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--amber);color:#3A2408;border-radius:999px;padding:3px 9px}
+.tag{font-style:normal;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--grad-amber);color:#3A2408;border-radius:999px;padding:3px 9px}
 .walkin{margin-top:18px;font-size:13.5px;color:var(--muted);display:flex;gap:9px;align-items:center;padding:0 12px 8px}
 .walkin i{color:var(--amber-ink)}
 
 /* ============ Booking ============ */
 .book{background:var(--cream2)}
 .book-card{display:grid;grid-template-columns:.9fr 1.1fr;border-radius:28px;overflow:hidden;box-shadow:0 26px 60px rgba(18,86,76,.12);background:var(--paper)}
-.book-info{background:var(--teal);color:var(--cream);padding:52px 46px;display:flex;flex-direction:column}
+.book-info{background:var(--grad-teal);color:var(--cream);padding:52px 46px;display:flex;flex-direction:column}
 .book-info h2{color:var(--cream);font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:16px}
 .book-info>p{color:#BFD8CE;font-size:15.5px;margin-bottom:34px;max-width:38ch}
 .c-row{display:flex;gap:15px;align-items:flex-start;padding:16px 0;border-top:1px solid rgba(255,255,255,.14)}
-.c-row i{font-size:22px;color:#F0C489;flex:none;margin-top:2px}
+.c-row i{font-size:22px;color:var(--gold);flex:none;margin-top:2px}
 .c-row small{display:block;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#8FB5A9;margin-bottom:3px}
-.c-row a,.c-row b{font-family:var(--ff-h);font-size:19px;font-weight:550;color:var(--cream)}
-.c-row a:hover{color:var(--amber)}
+.c-row a,.c-row b{font-family:var(--ff-h);font-size:17.5px;font-weight:550;color:var(--cream)}
+.c-row a:hover{color:var(--gold)}
 .book-info .status-pill{margin-top:auto;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:var(--cream)}
 .book-form{padding:52px 46px}
 .book-form h3{font-size:23px;margin-bottom:6px}
@@ -243,22 +268,22 @@ nav.scrolled{border-color:var(--line);box-shadow:0 8px 30px rgba(18,86,76,.07)}
 .f-actions small i{color:var(--ok);font-size:15px}
 
 /* ============ Footer ============ */
-footer{background:var(--teal-ink);color:#B9D2C8;padding:70px 0 26px}
+footer{background:linear-gradient(180deg,#0C3A33,#092A25);color:#B9D2C8;padding:70px 0 26px;border-top:3px solid;border-image:linear-gradient(90deg,var(--teal),var(--gold),var(--blush)) 1}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:44px;padding-bottom:46px}
-.foot-brand .logo-mark{background:var(--amber);color:#3A2408}
+.foot-brand .logo-mark{background:var(--grad-amber);color:#3A2408;box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
 .foot-brand b{color:var(--cream)}
 .foot-brand small{color:#8FB5A9}
 .foot-brand p{font-size:14.5px;margin-top:18px;max-width:32ch;line-height:1.7}
 footer h4{font-family:var(--ff-h);color:var(--cream);font-size:17px;font-weight:550;margin-bottom:18px}
 .foot-links{list-style:none;display:flex;flex-direction:column;gap:11px}
 .foot-links a{font-size:14.5px;transition:color .25s,padding-left .25s}
-.foot-links a:hover{color:var(--amber);padding-left:5px}
+.foot-links a:hover{color:var(--gold);padding-left:5px}
 .foot-hours{display:flex;flex-direction:column;gap:11px;font-size:14.5px}
-.foot-hours span{display:flex;gap:10px;align-items:center}
-.foot-hours i{color:var(--amber)}
-.foot-hours em{font-style:normal;color:var(--amber)}
+.foot-hours span{display:flex;gap:10px;align-items:flex-start}
+.foot-hours i{color:var(--gold);flex:none;margin-top:3px}
+.foot-hours em{font-style:normal;color:var(--gold)}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:#8FB5A9}
-.foot-bottom i{color:var(--amber);vertical-align:-2px}
+.foot-bottom i{color:var(--gold);vertical-align:-2px}
 
 /* ============ Toast & misc ============ */
 .toasts{position:fixed;top:90px;right:20px;z-index:200;display:flex;flex-direction:column;gap:12px}
@@ -272,17 +297,16 @@ footer h4{font-family:var(--ff-h);color:var(--cream);font-size:17px;font-weight:
 .toast.out{animation:tout .3s forwards}
 @keyframes tin{from{opacity:0;transform:translateX(40px)}}
 @keyframes tout{to{opacity:0;transform:translateX(40px)}}
-.to-top{position:fixed;bottom:24px;right:24px;z-index:80;width:48px;height:48px;border-radius:50%;background:var(--teal);color:var(--cream);display:grid;place-items:center;font-size:21px;opacity:0;transform:translateY(70px);transition:.4s;box-shadow:0 12px 28px rgba(18,86,76,.3)}
+.to-top{position:fixed;bottom:24px;right:24px;z-index:80;width:48px;height:48px;border-radius:50%;background:var(--grad-teal);color:var(--cream);display:grid;place-items:center;font-size:21px;opacity:0;transform:translateY(70px);transition:.4s;box-shadow:0 12px 28px rgba(18,86,76,.3)}
 .to-top.show{opacity:1;transform:none}
-.to-top:hover{background:var(--teal-ink)}
+.to-top:hover{filter:brightness(1.15)}
 
 /* ============ Responsive ============ */
 @media(max-width:980px){
   .hero-grid,.about-grid,.time-grid{grid-template-columns:1fr;gap:52px}
   .doc-card{position:static;max-width:440px}
   .book-card{grid-template-columns:1fr}
-  .ring-badge{width:96px;height:96px}
-  .chip-2{left:0}
+  .chip-2{left:-4px}
 }
 @media(max-width:860px){
   .nav-links,.nav-cta{display:none}
@@ -298,7 +322,8 @@ footer h4{font-family:var(--ff-h);color:var(--cream);font-size:17px;font-weight:
   .f-grid{grid-template-columns:1fr}
   .stat{padding-right:22px;margin-right:22px}
   .stat-num{font-size:32px}
-  .chip-1{right:-4px}
+  .ring-badge{width:86px;height:86px;top:-8px;left:-4px}
+  .chip-in{font-size:12px;padding:8px 13px}
   .toasts{left:20px}
   .toast{max-width:none}
 }
@@ -310,7 +335,7 @@ footer h4{font-family:var(--ff-h);color:var(--cream);font-size:17px;font-weight:
 </head>
 <body>
 
-<!-- ══════════ Moving announcement bar: discounts + timings ══════════ -->
+<!-- ══════════ Moving announcement bar ══════════ -->
 <div class="marquee" aria-label="Clinic offers and timings">
   <div class="marquee-track">
     <div class="marquee-seq">
@@ -319,7 +344,7 @@ footer h4{font-family:var(--ff-h);color:var(--cream);font-size:17px;font-weight:
       <span class="mq-item"><i class="ph ph-sparkle"></i>Flat 15% off on teeth whitening — this month</span><span class="mq-sep"><i class="ph-fill ph-sparkle"></i></span>
       <span class="mq-item"><i class="ph ph-heart"></i>Free first consultation for new patients</span><span class="mq-sep"><i class="ph-fill ph-sparkle"></i></span>
       <span class="mq-item"><i class="ph ph-shield-check"></i>20% off scaling &amp; polishing · family packages available</span><span class="mq-sep"><i class="ph-fill ph-sparkle"></i></span>
-      <span class="mq-item"><i class="ph ph-map-pin"></i>Near LIC Office, Malakkallu · Walk-ins welcome</span><span class="mq-sep"><i class="ph-fill ph-sparkle"></i></span>
+      <span class="mq-item"><i class="ph ph-map-pin"></i>Dr. Krishna Mohana's Dental Clinic · Near LIC Office, Malakkallu · Walk-ins welcome</span><span class="mq-sep"><i class="ph-fill ph-sparkle"></i></span>
     </div>
   </div>
 </div>
@@ -383,25 +408,38 @@ footer h4{font-family:var(--ff-h);color:var(--cream);font-size:17px;font-weight:
 
     <!-- Interactive dental arch -->
     <div class="hero-visual rv" style="--d:.15s">
-      <div class="blob"></div>
-      <div class="arch-wrap" id="archWrap">
-        <svg id="archSvg" viewBox="0 0 560 290" role="img" aria-label="Interactive smile — hover each tooth to see the treatment it needs"></svg>
-        <div class="arch-panel" id="archPanel">
-          <span class="ap-ic"><i class="ph ph-hand-tapping" id="apIcon"></i></span>
-          <div>
-            <strong id="apTitle">Every tooth has a story</strong>
-            <span id="apDesc">Hover or tap a tooth — and the gums too — to see how we care for it. Click to jump to the treatment.</span>
-          </div>
+      <div class="arch-stage">
+        <div class="blob"></div>
+        <div class="arch-wrap" id="archWrap">
+          <svg id="archSvg" viewBox="0 0 560 290" role="img" aria-label="Interactive smile — hover each tooth to see the treatment it needs">
+            <defs>
+              <linearGradient id="toothHot" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#F6E3CE"/><stop offset="1" stop-color="#F2D9C8"/>
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
+        <div class="ring-badge" aria-hidden="true">
+          <svg class="ring" viewBox="0 0 120 120">
+            <defs>
+              <path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/>
+              <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#12564C"/><stop offset=".55" stop-color="#4E9B84"/><stop offset="1" stop-color="#C97A35"/>
+              </linearGradient>
+            </defs>
+            <text fill="url(#ringGrad)"><textPath href="#circ">GENTLE CARE • MODERN • MALAKKALLU •</textPath></text>
+          </svg>
+          <span class="ring-core"><i class="ph-fill ph-tooth"></i></span>
+        </div>
+        <button class="chip chip-1" data-goto="svc-6"><span class="chip-in"><i class="ph-fill ph-baby"></i>Little smiles welcome</span></button>
+        <button class="chip chip-2" data-goto="about"><span class="chip-in"><i class="ph-fill ph-shield-check"></i>Sterile &amp; gentle</span></button>
       </div>
-      <button class="chip chip-1" data-goto="svc-6"><span class="chip-in"><i class="ph-fill ph-baby"></i>Little smiles welcome</span></button>
-      <button class="chip chip-2" data-goto="about"><span class="chip-in"><i class="ph-fill ph-shield-check"></i>Sterile &amp; gentle</span></button>
-      <div class="ring-badge" aria-hidden="true">
-        <svg class="ring" viewBox="0 0 120 120">
-          <defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
-          <text><textPath href="#circ">GENTLE CARE • MODERN • MALAKKALLU •</textPath></text>
-        </svg>
-        <span class="ring-core"><i class="ph-fill ph-tooth"></i></span>
+      <div class="arch-panel" id="archPanel">
+        <span class="ap-ic"><i class="ph ph-hand-tapping" id="apIcon"></i></span>
+        <div>
+          <strong id="apTitle">Every tooth has a story</strong>
+          <span id="apDesc">Hover or tap a tooth — and the gums too — to see how we care for it. Click to jump to the treatment.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -479,8 +517,15 @@ footer h4{font-family:var(--ff-h);color:var(--cream);font-size:17px;font-weight:
   <div class="container about-grid">
     <div class="doc-card rv">
       <div class="mono-wrap">
-        <svg class="mono-ring" viewBox="0 0 150 150"><circle cx="75" cy="75" r="72"/></svg>
-        <div class="mono">KM</div>
+        <svg class="mono-ring" viewBox="0 0 160 160" aria-hidden="true">
+          <defs>
+            <linearGradient id="mring" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#D98C46"/><stop offset="1" stop-color="#12564C"/>
+            </linearGradient>
+          </defs>
+          <circle cx="80" cy="80" r="76" fill="none" stroke="url(#mring)" stroke-width="1.6" stroke-dasharray="4 9" stroke-linecap="round"/>
+        </svg>
+        <div class="mono"><span>KM</span></div>
       </div>
       <h3>Dr. Krishna Mohana</h3>
       <div class="doc-cred">BDS · Dental Surgeon</div>
@@ -520,11 +565,11 @@ footer h4{font-family:var(--ff-h);color:var(--cream);font-size:17px;font-weight:
       <h2>Easy to reach,<br><em>easier to smile</em></h2>
       <p class="lead">The clinic sits right beside a familiar landmark — ask anyone in Malakkallu for the LIC office and we're next door.</p>
       <div class="addr">
-        <span><i class="ph ph-map-pin"></i><span><b>Address</b><br>Near LIC Office, Malakkallu</span></span>
+        <span><i class="ph ph-map-pin"></i><span><b>Clinic address</b><br>Dr. Krishna Mohana's Dental Clinic,<br>Near LIC Office, Malakkallu</span></span>
         <span><i class="ph ph-phone"></i><span><b>Call us</b><br><a href="tel:+919876543210">+91 98765 43210</a></span></span>
         <span><i class="ph ph-clock"></i><span><b>Hours</b><br>Mon – Sat: 9:00 AM – 4:00 PM<br>Sunday: Holiday</span></span>
       </div>
-      <a class="btn btn-solid" href="https://www.google.com/maps/search/?api=1&query=dental+clinic+near+LIC+office+Malakkallu" target="_blank" rel="noopener"><i class="ph ph-navigation-arrow"></i>Get directions</a>
+      <a class="btn btn-solid" href="https://www.google.com/maps/search/?api=1&query=Dr+Krishna+Mohana+Dental+Clinic+near+LIC+Office+Malakkallu" target="_blank" rel="noopener"><i class="ph ph-navigation-arrow"></i>Get directions</a>
     </div>
     <div class="sched-card rv" style="--d:.12s">
       <div class="sched-top">
@@ -542,7 +587,7 @@ footer h4{font-family:var(--ff-h);color:var(--cream);font-size:17px;font-weight:
   <div class="container">
     <div class="book-card rv">
       <div class="book-info">
-        <h2>Book <em style="color:#F0C489">your visit</em></h2>
+        <h2>Book <em style="color:var(--gold);font-style:italic">your visit</em></h2>
         <p>Send a request and the clinic will call you back to confirm a slot that suits you.</p>
         <div class="c-row">
           <i class="ph ph-phone"></i>
@@ -554,7 +599,7 @@ footer h4{font-family:var(--ff-h);color:var(--cream);font-size:17px;font-weight:
         </div>
         <div class="c-row">
           <i class="ph ph-map-pin"></i>
-          <div><small>Clinic</small><b>Near LIC Office, Malakkallu</b></div>
+          <div><small>Clinic</small><b>Dr. Krishna Mohana's Dental Clinic,<br>Near LIC Office, Malakkallu</b></div>
         </div>
         <span class="status-pill js-status"><span class="dot"></span><span>…</span></span>
       </div>
@@ -634,7 +679,7 @@ footer h4{font-family:var(--ff-h);color:var(--cream);font-size:17px;font-weight:
       <div>
         <h4>Find us</h4>
         <div class="foot-hours">
-          <span><i class="ph ph-map-pin"></i>Near LIC Office, Malakkallu</span>
+          <span><i class="ph ph-map-pin"></i>Dr. Krishna Mohana's Dental Clinic, Near LIC Office, Malakkallu</span>
           <span><i class="ph ph-phone"></i>+91 98765 43210</span>
         </div>
       </div>
@@ -731,7 +776,7 @@ const todayIdx = (new Date().getDay()+6)%7;             // Monday-first index
 
 /* ---------- the interactive dental arch ---------- */
 const SVGNS='http://www.w3.org/2000/svg';
-const CX=280, CY=-60, R=300, GAP=6;
+const CX=280, CY=-60, R=300, GAP=8;                     // wider, uniform gap between teeth
 const polar=(phi,r)=>[CX + r*Math.sin(phi), CY + r*Math.cos(phi)];
 
 // tooth silhouettes in local coords (crown points down = +y)
@@ -753,11 +798,11 @@ const HALF=[
   {k:'molar',   w:42, svc:'rct'}
 ];
 const ARCH_SVC={
-  rct:       {icon:'ph-heartbeat',      title:'Molars · Root Canal Therapy',  desc:'The workhorses of your bite — saved with gentle, well-anaesthetised RCT.', target:'svc-2'},
-  crowns:    {icon:'ph-crown',          title:'Premolars · Crowns & Bridges', desc:'Cracked or worn premolars are rebuilt with natural-looking restorations.', target:'svc-5'},
-  braces:    {icon:'ph-smiley',         title:'Canines · Braces & Aligners',  desc:'Canines anchor your smile — aligned with braces or clear aligners.',      target:'svc-3'},
-  whitening: {icon:'ph-sparkle',        title:'Incisors · Teeth Whitening',   desc:'The front row of your smile — brightened safely in a single visit.',      target:'svc-4'},
-  preventive:{icon:'ph-shield-check',   title:'Gums · Preventive Care',       desc:'Healthy gums hold everything together — cleanings and gum care keep them so.', target:'svc-1'}
+  rct:       {icon:'ph-heartbeat',    title:'Molars · Root Canal Therapy',  desc:'The workhorses of your bite — saved with gentle, well-anaesthetised RCT.', target:'svc-2'},
+  crowns:    {icon:'ph-crown',        title:'Premolars · Crowns & Bridges', desc:'Cracked or worn premolars are rebuilt with natural-looking restorations.', target:'svc-5'},
+  braces:    {icon:'ph-smiley',       title:'Canines · Braces & Aligners',  desc:'Canines anchor your smile — aligned with braces or clear aligners.',      target:'svc-3'},
+  whitening: {icon:'ph-sparkle',      title:'Incisors · Teeth Whitening',   desc:'The front row of your smile — brightened safely in a single visit.',      target:'svc-4'},
+  preventive:{icon:'ph-shield-check', title:'Gums · Preventive Care',       desc:'Healthy gums hold everything together — cleanings and gum care keep them so.', target:'svc-1'}
 };
 const SPARK='M0 -7 Q1.2 -1.2 7 0 Q1.2 1.2 0 7 Q-1.2 1.2 -7 0 Q-1.2 -1.2 0 -7 Z';
 
@@ -765,8 +810,8 @@ function buildArch(){
   const svg = $('#archSvg');
   const mk = (tag,attrs)=>{ const el=document.createElementNS(SVGNS,tag); for(const a in attrs) el.setAttribute(a,attrs[a]); return el; };
 
-  // gum band behind the teeth
-  const gPhi = 50*Math.PI/180, rG = 284;
+  // gum band behind the teeth (extends past the outermost tooth on both sides)
+  const gPhi = 58*Math.PI/180, rG = 284;
   const [gx1,gy1]=polar(-gPhi,rG), [gx2,gy2]=polar(gPhi,rG);
   const gum = mk('path',{d:`M ${gx1.toFixed(1)} ${gy1.toFixed(1)} A ${rG} ${rG} 0 0 0 ${gx2.toFixed(1)} ${gy2.toFixed(1)}`, class:'gum'});
   svg.appendChild(gum);
@@ -782,6 +827,10 @@ function buildArch(){
     const phi = t.a/R, [x,y] = polar(phi,R), deg = -phi*180/Math.PI;
     const g = mk('g',{class:'tooth-g', transform:`translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${deg.toFixed(2)})`, tabindex:0, role:'button', 'aria-label':ARCH_SVC[t.svc].title});
     const inner_g = mk('g',{class:'tooth-in'}); inner_g.style.setProperty('--i', i);
+
+    // invisible hit-zone sized EXACTLY to this tooth's slot — no overlap with neighbours
+    g.appendChild(mk('rect',{x:-t.w/2, y:-27, width:t.w, height:54, class:'hit'}));
+
     inner_g.appendChild(mk('path',{d:SHAPES[t.k], class:'tooth-shape'}));
     const sWrap = mk('g',{transform:`translate(${t.w/2-3} ${-t.w/2-4})`});
     sWrap.appendChild(mk('path',{d:SPARK, class:'spark'}));
@@ -854,7 +903,6 @@ function toast(title, msg, type='ok'){
 
 /* ---------- booking form ---------- */
 const form = $('#bookForm'), fName=$('#fName'), fPhone=$('#fPhone'), fDate=$('#fDate');
-// date can't be in the past
 const pad = n=>String(n).padStart(2,'0'); const now=new Date();
 fDate.min = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())}`;
 
@@ -890,7 +938,7 @@ document.addEventListener('mousemove', e=>{
   const dy = (e.clientY-(r.top+r.height/2))/r.height;
   archWrap.style.transform = `translate(${dx*8}px, ${dy*8}px)`;
   $$('.chip', heroVisual).forEach((c,i)=>{
-    const f = i===0 ? 20 : 30;
+    const f = i===0 ? 18 : 26;
     c.style.transform = `translate(${dx*f}px, ${dy*f}px)`;
   });
 });
